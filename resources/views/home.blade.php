@@ -14,71 +14,6 @@
 
         <!-- Main content -->
     <section class="content">
-            <!-- Small boxes (Stat box) -->
-            <div class="row">
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-aqua">
-                        <div class="inner">
-                            <h3>150</h3>
-
-                            <p>New Orders</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-bag"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-green">
-                        <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                            <p>Bounce Rate</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-stats-bars"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-yellow">
-                        <div class="inner">
-                            <h3>44</h3>
-
-                            <p>User Registrations</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-                <div class="col-lg-3 col-xs-6">
-                    <!-- small box -->
-                    <div class="small-box bg-red">
-                        <div class="inner">
-                            <h3>65</h3>
-
-                            <p>Unique Visitors</p>
-                        </div>
-                        <div class="icon">
-                            <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                </div>
-                <!-- ./col -->
-            </div>
-            <!-- /.row -->
-            <!-- Main row -->
             <div class="row">
                 <!-- Left col -->
                 <section class="col-lg-12 connectedSortable">
@@ -90,104 +25,42 @@
                             <i class="ion ion-clipboard"></i>
 
                             <h3 class="box-title">Tasks List</h3>
-
-                            <div class="box-tools pull-right">
-                                <ul class="pagination pagination-sm inline">
-                                    <li><a href="#">&laquo;</a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">&raquo;</a></li>
-                                </ul>
-                            </div>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
                             <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
                             <ul class="todo-list">
-                                <li>
+                                <li id="example-li-element" style="display: none">
                                     <!-- drag handle -->
                                     <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
                       </span>
-                                    <!-- checkbox -->
-                                    <input type="checkbox" value="">
-                                    <!-- todo text -->
-                                    <span class="text">Design a nice theme</span>
-                                    <!-- Emphasis label -->
-                                    <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                                    <!-- General tools such as edit or delete-->
-                                    <div class="tools">
-                                        <i class="fa fa-edit"></i>
-                                        <i class="fa fa-trash-o"></i>
-                                    </div>
+                                    <span id="span-name" class="text"><b>Name:</b></span>
+                                    <span id="span-description" class="text"><b>Description:</b></span>
+                                    <span id="span-owned" class="text"><b>Owned by:</b></span>
+                                    <span id="span-assigned" class="text"><b>Assigned to:</b></span>
+                                    <small id="span-status" class="label label-danger"><i class="fa"></i><b>Status:</b></small>
+
                                 </li>
-                                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
+                                @foreach($data['tasks'] as $task)
+                                    <li id="li-{{$task->id}}">
+                                        <!-- drag handle -->
+                                        <span class="handle">
                       </span>
-                                    <input type="checkbox" value="">
-                                    <span class="text">Make the theme responsive</span>
-                                    <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                                    <div class="tools">
-                                        <i class="fa fa-edit"></i>
-                                        <i class="fa fa-trash-o"></i>
-                                    </div>
-                                </li>
-                                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                    <input type="checkbox" value="">
-                                    <span class="text">Let theme shine like a star</span>
-                                    <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                                    <div class="tools">
-                                        <i class="fa fa-edit"></i>
-                                        <i class="fa fa-trash-o"></i>
-                                    </div>
-                                </li>
-                                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                    <input type="checkbox" value="">
-                                    <span class="text">Let theme shine like a star</span>
-                                    <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                                    <div class="tools">
-                                        <i class="fa fa-edit"></i>
-                                        <i class="fa fa-trash-o"></i>
-                                    </div>
-                                </li>
-                                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                    <input type="checkbox" value="">
-                                    <span class="text">Check your messages and notifications</span>
-                                    <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                                    <div class="tools">
-                                        <i class="fa fa-edit"></i>
-                                        <i class="fa fa-trash-o"></i>
-                                    </div>
-                                </li>
-                                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                                    <input type="checkbox" value="">
-                                    <span class="text">Let theme shine like a star</span>
-                                    <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                                    <div class="tools">
-                                        <i class="fa fa-edit"></i>
-                                        <i class="fa fa-trash-o"></i>
-                                    </div>
-                                </li>
+                                        <span class="text"><b>Name:</b> {{ $task->name }}</span>
+                                        <span class="text"><b>Description:</b> {{ $task->description }}</span>
+                                        <span class="text"><b>Owned by:</b> {{ $task->user->name }}</span>
+                                        <span class="text"><b>Assigned to:</b> {{ $task->assignTo->name }}</span>
+                                        @if($task->status == 0)
+                                            <small class="label label-success"><i class="fa"></i><b>Status:</b> {{ $task->status }}</small>
+                                        @else
+                                            <small class="label label-danger"><i class="fa"></i><b>Status:</b> {{ $task->status }}</small>
+                                        @endif
+                                        <div class="tools">
+                                            <i id="edit-task edit-{{$task->id}}" data-id="{{$task->id}}" class="fa fa-edit"></i>
+                                            <i id="delete-task delete-{{$task->id}}" data-id="{{$task->id}}" class="fa fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
 
@@ -197,15 +70,15 @@
                             </div>
                             <div class="box-body">
                                 <div class="input-group">
+                                    <input  style="display: block;width: 80%" id="name" type="text" placeholder="Task Name">
                                     <input style="display: block;width: 80%" id="description" type="text" placeholder="Task Description">
                                     <label style="display: block" for="status">Status</label>
                                     <input style="display: block" id="status" type="checkbox">
                                     <label style="display: block" for="assign">Assigned to:</label>
                                     <select style="display: block" id="assign" name="assign">
-                                        <option value="Cioabla">Cioabla</option>
-                                        <option value="saab">Saab</option>
-                                        <option value="opel">Opel</option>
-                                        <option value="audi">Audi</option>
+                                        @foreach($data['users'] as $user)
+                                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                        @endforeach
                                     </select>
 
 
@@ -225,17 +98,8 @@
                     </div>
 
                 </section>
-                <!-- /.Left col -->
-                <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                {{--<section class="col-lg-5 connectedSortable">--}}
-
-                {{--</section>--}}
-                <!-- right col -->
             </div>
-            <!-- /.row (main row) -->
         </section>
-        <!-- /.content -->
-
 @endsection
 
 @section('script')
@@ -245,20 +109,6 @@
 
             $('#add-new-task').show();
             $('#add-new-task-button').hide();
-            // $.ajax({
-            //     type: 'get',
-            //     url: 'Methods.php',
-            //     data: {method: method,
-            //         id:id},
-            //     success: function (data) {
-            //         if(data === 'Success')
-            //         {
-            //             $('#list'+id).remove();
-            //             $('.id'+id).remove();
-            //         }
-            //     },
-            //     dataType: 'json',
-            // });
         });
 
         $(document).on('click', "#cancel-new-event", function (event) {
@@ -266,20 +116,71 @@
 
             $('#add-new-task').hide();
             $('#add-new-task-button').show();
-            // $.ajax({
-            //     type: 'get',
-            //     url: 'Methods.php',
-            //     data: {method: method,
-            //         id:id},
-            //     success: function (data) {
-            //         if(data === 'Success')
-            //         {
-            //             $('#list'+id).remove();
-            //             $('.id'+id).remove();
-            //         }
-            //     },
-            //     dataType: 'json',
-            // });
+        });
+
+        $(document).on('click', "#add-new-event", function (event) {
+            event.preventDefault();
+
+            $('#add-new-task').hide();
+            $('#add-new-task-button').show();
+            var name = $('#name').val();
+            var description = $('#description').val();
+            var assign = $('#assign').val();
+
+            if ($('#status').is(":checked"))
+            {
+                var status = 1;
+            }else{
+                var status = 0;
+            }
+
+            $.ajax({
+                type: 'post',
+                url: '/add-task',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {name:name,description:description,assign:assign,status:status},
+                success: function (data) {
+                    var li = $('#example-li-element').html();
+                    $('.todo-list').append('<li id="li-'+data.id+'">'+li+'</li>');
+                    $('.todo-list>#li-'+data.id+'>#span-name').append(data.name);
+                    $('.todo-list>#li-'+data.id+'>#span-description').append(data.description);
+                    $('.todo-list>#li-'+data.id+'>#span-owned').append(data.user_id);
+                    $('.todo-list>#li-'+data.id+'>#span-assign').append(data.assign);
+                    $('.todo-list>#li-'+data.id+'>#span-status').append(data.status);
+                    $('.todo-list>#li-'+data.id).append('<div class="tools">' +
+                            '<i id="edit-task edit-'+data.id+'" data-id="'+data.id+'" class="fa fa-edit"></i>' +
+                            '<i id="delete-task delete-'+data.id+'" data-id="'+data.id+'" class="fa fa-trash-o"></i>' +
+                        '</div>');
+                },
+                dataType: 'json',
+            });
+        });
+
+        $(document).on('click', ".fa-trash-o", function (event) {
+            event.preventDefault();
+
+            var id = $(this).attr('data-id');
+        console.log(id);
+
+            $.ajax({
+                type: 'post',
+                url: '/delete-task/' +id,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data:{
+                    '_token': $(
+                        'input[name = "_token"]').val(),
+                    _method: 'delete'
+                },
+
+                success: function (data) {
+                    $('.todo-list>#li-'+data.id).remove();
+                },
+                dataType: 'json',
+            });
         });
     </script>
 @endsection

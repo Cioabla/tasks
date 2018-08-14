@@ -34,8 +34,8 @@ class Task extends Model
     /**
      * Get the user that owns the task.
      */
-    public function assign()
+    public function assignTo()
     {
-        return $this->belongsTo('App\User', 'id', 'assign');
+        return $this->belongsTo('App\User', 'assign', 'id');
     }
 }

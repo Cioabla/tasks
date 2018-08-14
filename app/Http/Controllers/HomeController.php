@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Task;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 class HomeController extends Controller
@@ -24,21 +27,40 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //TODO get all tasks and return to view
+        $tasks = Task::all();
+        $users = User::all();
 
-        return view('home');
+        $data = [
+            'tasks' => $tasks,
+            'users' => $users
+        ];
+
+        return view('home' , compact('data'));
     }
 
     public function addTask(Request $request) {
-        //TODO add a task
+        $task = [
+            'name' => $request->name,
+            'description' => $request->description,
+            'status' => $request->status,
+            'user_id' => Auth::id(),
+            'assign' => $request->assign
+        ];
 
-        return Redirect::back();
+        $task = Task::create($task);
+
+        $task->user_id = $task->user->name;
+        $task->assigned = $task->assignTo->name;
+
+        return response()->json($task);
     }
 
     public function editTask($id, Request $request) {
-        //TODO add a task
+        $task = Task::find(1);
 
-        return Redirect::back();
+        $task->delete();
+
+        return response()->json($task);
     }
 
     public function deleteTask($id) {
